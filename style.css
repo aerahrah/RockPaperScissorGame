@@ -249,17 +249,17 @@ footer {
     color: var(--bg-main);
   }
   .container .left .player h1, .container .left .computer h1, .container .right .player h1, .container .right .computer h1 {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
   .container .left .choice-container, .container .right .choice-container {
     margin-top: 1rem;
-    gap: .25rem;
+    gap: .55rem;
   }
   .container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
     font-size: 1.15rem;
   }
   .item-player, .item-computer {
-    padding: 1rem;
+    padding: .85rem;
   }
   i {
     font-size: 2.5rem !important;

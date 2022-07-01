@@ -222,13 +222,12 @@ i{
                 min-width: 130px;
                 color: var(--bg-main);
                 h1{
-                    font-size: 1.15rem;
+                    font-size: 1rem;
                 }
-               
             }
             .choice-container{
                 margin-top: 1rem;
-                gap: .25rem;
+                gap: .55rem;
             }
             #scoreBoard_player, #scoreBoard_computer{
                 font-size: 1.15rem;
@@ -236,7 +235,7 @@ i{
         } 
     }
     .item-player, .item-computer{
-        padding: 1rem;
+        padding: .85rem;
     }
     i{
         font-size: 2.5rem !important;
