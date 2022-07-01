@@ -238,28 +238,28 @@ footer {
     column-gap: .25rem;
   }
   .container .left, .container .right {
-    max-width: 200px;
+    max-width: 160px;
   }
   .container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
     margin-top: 2rem;
     margin-bottom: 1.25rem;
-    padding: 1.15rem;
+    padding: 1rem;
     gap: .75rem;
-    min-width: 150px;
+    min-width: 130px;
     color: var(--bg-main);
   }
   .container .left .player h1, .container .left .computer h1, .container .right .player h1, .container .right .computer h1 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   .container .left .choice-container, .container .right .choice-container {
     margin-top: 1rem;
     gap: .25rem;
   }
   .container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   .item-player, .item-computer {
-    padding: 1.15rem;
+    padding: 1rem;
   }
   i {
     font-size: 2.5rem !important;

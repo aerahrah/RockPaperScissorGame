@@ -213,16 +213,16 @@ i{
         margin-top: 1rem;
         column-gap: .25rem;
         .left,.right{
-            max-width: 200px;
+            max-width: 160px;
             .player,.computer{
                 margin-top: 2rem;
                 margin-bottom: 1.25rem;
-                padding: 1.15rem;
+                padding: 1rem;
                 gap: .75rem;
-                min-width: 150px;
+                min-width: 130px;
                 color: var(--bg-main);
                 h1{
-                    font-size: 1.25rem;
+                    font-size: 1.15rem;
                 }
                
             }
@@ -231,12 +231,12 @@ i{
                 gap: .25rem;
             }
             #scoreBoard_player, #scoreBoard_computer{
-                font-size: 1.25rem;
+                font-size: 1.15rem;
             }
         } 
     }
     .item-player, .item-computer{
-        padding: 1.15rem;
+        padding: 1rem;
     }
     i{
         font-size: 2.5rem !important;
