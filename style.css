@@ -58,9 +58,6 @@
   font-size: 1.25rem;
   border: none;
   background-color: var(--bg-secondary);
-}
-
-.container-box button:hover {
   color: var(--yellow-color);
 }
 
@@ -76,7 +73,7 @@ body {
 }
 
 .main-container {
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 header {

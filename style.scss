@@ -53,8 +53,6 @@
         font-size: 1.25rem;
         border: none;
         background-color: var(--bg-secondary);
-    }
-    button:hover{
         color: var(--yellow-color);
     }
     button:active{
@@ -69,7 +67,7 @@ body{
 }
 .main-container{
     @extend %flex-container;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 header{
     margin: 0 1.5rem;
