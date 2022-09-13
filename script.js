@@ -30,8 +30,19 @@ const item_player = document.querySelectorAll(".item-player");
 const item_computer = document.querySelectorAll(".item-computer");
 const final_result = document.querySelector(".finalResult");
 const play_again = document.querySelector(".play-again");
+const container_box = document.querySelector(".container-box");
 
+const cheetcode = ["ROCK","ROCK","SCISSORS","PAPER"];
+const cheetplayer = [];
 //DOMS DESIGN
+let cheet_sequence = (cheetcode, cheetplayer) =>{
+    console.log(cheetplayer.join());
+    console.log(cheetcode.join());
+    if(cheetplayer.join() == cheetcode.join()){
+
+        return battle_result.textContent="I love you Max forever ❤️";
+    }
+}
 let add_player =(choice,icon, color)=>{
     add_item_player();
     add_class_player(icon);
@@ -157,11 +168,13 @@ let playRound=(playerSelection, computerSelection)=>{
 let game = (choice)=>{
     playRound(choice, computer_choice());
     if(playerScore == 5){
-        design.style.display="flex";
+        container_box.classList.add('active-box');
+        design.classList.add('active-design');
         final_result.textContent="You Won!!";
         battle_result.textContent="you won the game!!";
     }else if(computerScore == 5){
-        design.style.display="flex";
+        container_box.classList.add('active-box');
+        design.classList.add('active-design');
         final_result.textContent="You lost!!";
         battle_result.textContent="computer won the game!!";
     }else{
@@ -171,19 +184,27 @@ let game = (choice)=>{
 
 rock.addEventListener("click", ()=>{
     add_player(pick[0],icon_rock,red_color);
+    cheetplayer.push(pick[0]);
+    cheet_sequence(cheetcode,cheetplayer);
 });
 paper.addEventListener("click", ()=>{
     add_player(pick[1],icon_paper,green_color);
+    cheetplayer.push(pick[1]);
+    cheet_sequence(cheetcode,cheetplayer);
 });
 scissor.addEventListener("click", ()=>{
     add_player(pick[2],icon_scissor,blue_color);
+    cheetplayer.push(pick[2]);
+    cheet_sequence(cheetcode,cheetplayer);
 });
+
 play_again.addEventListener("click", ()=>{
     playerScore=0;
     computerScore=0;
+    container_box.classList.remove('active-box');
+    design.classList.remove('active-design');
     score_computer.textContent="score";
     score_player.textContent="score";
-    design.style.display="none";
     battle_result.textContent="result";
     remove_item_comp("actived");
     remove_item_player("actived");

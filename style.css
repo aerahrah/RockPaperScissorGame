@@ -7,7 +7,7 @@
   --bg-secondary: #495057;
 }
 
-.container-box, .main-container, .container .left, .container .right, .container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
+.container .left .player, .container .left .computer, .container .right .player, .container .right .computer, .container .left, .container .right, .main-container, .container-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,17 +20,19 @@
 }
 
 .design {
-  display: none;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: .1s ease-in;
+  transform: scale(0);
+  transition: 0.2s ease-in;
   z-index: 10000;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.active-design {
+  transform: scale(1);
 }
 
 .container-box {
@@ -44,39 +46,41 @@
   background-color: var(--bg-main);
   box-shadow: 0 5px 50px 12px rgba(0, 0, 0, 0.14);
   color: var(--yellow-color);
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
 }
-
 .container-box h1 {
   font-size: 2.25rem;
 }
-
 .container-box button {
-  transition: .05s ease-in;
+  transition: 0.05s ease-in;
   border-radius: 16px;
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   border: none;
   background-color: var(--bg-secondary);
-}
-
-.container-box button:hover {
   color: var(--yellow-color);
 }
-
 .container-box button:active {
   transform: scale(0.97);
+}
+
+.container-box.active-box {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 body {
   min-height: 100vh;
   background-color: #212529;
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
   overflow-x: hidden;
 }
 
 .main-container {
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 header {
@@ -84,19 +88,16 @@ header {
   margin-top: 1.5rem;
   text-align: center;
 }
-
 header .title {
   font-size: 4rem;
   color: var(--yellow-color);
   margin-bottom: 1rem;
 }
-
 header .description {
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
   color: var(--yellow-color);
 }
-
 header #battleResults {
   font-size: 2rem;
   margin: 4rem 0 -1rem 0;
@@ -108,14 +109,13 @@ header #battleResults {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  column-gap: 3rem;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
 }
-
 .container .left, .container .right {
   max-width: 400px;
   width: 90vw;
 }
-
 .container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
   margin-top: 3rem;
   padding: 2rem;
@@ -126,15 +126,13 @@ header #battleResults {
   min-width: 220px;
   color: var(--bg-main);
 }
-
 .container .left .choice-container, .container .right .choice-container {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
-
 .container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
   background-color: var(--bg-secondary);
   color: inherit;
@@ -154,19 +152,16 @@ i {
 }
 
 .left .rock i:hover, .left .paper i:hover, .left .scissor i:hover {
-  transition: .116s ease-in;
+  transition: 0.116s ease-in;
   transform: scale(1.32);
   cursor: pointer;
 }
-
 .left .item-player.rock:hover {
   border: 2px solid var(--red-color);
 }
-
 .left .item-player.paper:hover {
   border: 2px solid var(--green-color);
 }
-
 .left .item-player.scissor:hover {
   border: 2px solid var(--blue-color);
 }
@@ -186,25 +181,20 @@ i {
 .actived.rock {
   border: 2px solid var(--red-color);
 }
-
 .actived.rock i {
   color: var(--red-color);
   transform: scale(1.24);
 }
-
 .actived.paper {
   border: 2px solid var(--green-color);
 }
-
 .actived.paper i {
   color: var(--green-color);
   transform: scale(1.24);
 }
-
 .actived.scissor {
   border: 2px solid var(--blue-color);
 }
-
 .actived.scissor i {
   color: var(--blue-color);
   transform: scale(1.24);
@@ -222,20 +212,21 @@ footer {
 @media (max-width: 600px) {
   header .title {
     font-size: 2rem;
-    margin: 0 .5rem;
-    margin-bottom: .75rem;
+    margin: 0 0.5rem;
+    margin-bottom: 0.75rem;
   }
   header .description {
-    font-size: .8rem;
-    margin-bottom: .7rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
   }
   header #battleResults {
     font-size: 1.35rem;
-    margin: 4rem 0 -.5rem 0;
+    margin: 4rem 0 -0.5rem 0;
   }
   .container {
     margin-top: 1rem;
-    column-gap: .25rem;
+    -moz-column-gap: 0.25rem;
+         column-gap: 0.25rem;
   }
   .container .left, .container .right {
     max-width: 160px;
@@ -244,7 +235,7 @@ footer {
     margin-top: 2rem;
     margin-bottom: 1.25rem;
     padding: 1rem;
-    gap: .75rem;
+    gap: 0.75rem;
     min-width: 130px;
     color: var(--bg-main);
   }
@@ -253,16 +244,15 @@ footer {
   }
   .container .left .choice-container, .container .right .choice-container {
     margin-top: 1rem;
-    gap: .55rem;
+    gap: 0.55rem;
   }
   .container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
     font-size: 1.15rem;
   }
   .item-player, .item-computer {
-    padding: .85rem;
+    padding: 0.85rem;
   }
   i {
     font-size: 2.5rem !important;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
